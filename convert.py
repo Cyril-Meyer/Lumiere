@@ -28,9 +28,13 @@ def read_video(filename, framerate):
     cap.release()
 
     t1 = time.time()
-    print(f'read_video time : {t1 - t0}')
 
-    return np.array(video)
+    video = np.array(video)
+
+    print(f'read_video time : {t1 - t0}')
+    print(f'read_video shape, min, max : {video.shape} {video.min()} {video.max()}')
+
+    return video
 
 
 if __name__ == "__main__":
